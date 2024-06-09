@@ -59,13 +59,16 @@ jobs:
             echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
             
             # Run Docker Compose for development
-            docker-compose -f docker-compose.yml down
-            docker-compose -f docker-compose.yml pull
-            docker-compose -f docker-compose.yml up -d
+            docker compose -f docker-compose.yml down
+            docker compose -f docker-compose.yml pull
+            docker compose -f docker-compose.yml up -d
             
+            #Check result
+            docker ps
+
             # Run Docker Compose for production
-            docker-compose -f docker-compose-prod.yml down
-            docker-compose -f docker-compose-prod.yml pull
-            docker-compose -f docker-compose-prod.yml up -d
+            docker compose -f docker-compose-prod.yml down
+            docker compose -f docker-compose-prod.yml pull
+            docker compose -f docker-compose-prod.yml up -d
             
             rm -rf /home/ubuntu/frontend
