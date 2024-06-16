@@ -3,4 +3,4 @@ services:
   frontend:
     image: masterhua/9999-deploylab-frontend:latest
     ports:
-      - "9999:80"
+      - "9999:81"

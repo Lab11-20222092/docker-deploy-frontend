@@ -53,8 +53,7 @@ jobs:
             docker ps
 
             # Run Docker Compose for production
+            
             docker compose -f docker-compose-prod.yml down
             docker compose -f docker-compose-prod.yml pull
             docker compose -f docker-compose-prod.yml up -d
-
-            rm -rf /home/ubuntu/frontend
